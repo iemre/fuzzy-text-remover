@@ -1,8 +1,8 @@
 # Summary
 
-fuzzy-text-remover matches & removes a given string (swear words, private addresses, or other things) from a given source string.
+fuzzy-text-remover matches & removes a given string (swear words, private addresses, or other things) in a given source string.
   
-It can be used to detect swear words in user comments, or replace personal info from a source string.
+It can be used to detect swear words in user comments, or replace personal info in a given string.
  
  
 # Example usage:
@@ -22,20 +22,6 @@ Add the maven dependency to your project
   <version>0.2.0</version>
 </dependency>
 ```
-
-
-## Similarity metrics:
-
-Supported similarity metrics:
-
-* The Jaro-Winkler distance 
-* Edit distance (Levenshtein distance)
-  
- 
-The following examples make use of the edit distance. However, the user can make use of the Jaro-Winkler distance, by using, 
-for example, the method `replaceStringByJwd`, instead of the method `replaceStringByEditDistance` in the examples below.
-
-My personal opinion is that the Jaro-Winkler distance is a much better choice if the user does not know what edit distance value to use. 
 
 
 ## Use case 1:
@@ -82,6 +68,19 @@ the segments of the source string that match at least the 70% of the given searc
 
 The last argument `1` is the max. allowed edit distance at the word level. 
 
+
+## Note on Similarity metrics:
+
+Supported similarity metrics:
+
+* The Jaro-Winkler distance 
+* Edit distance (Levenshtein distance)
+  
+ 
+The above examples make use of the Levenshtein edit distance. The user can make use of the Jaro-Winkler distance, by using, 
+for example, the method `replaceStringByJwd`, instead of the method `replaceStringByEditDistance` in the examples.
+
+My personal opinion is that the Jaro-Winkler distance is probably a better choice if the user does not know what edit distance value to use. 
 
 
 ## Acknowledgement and License
