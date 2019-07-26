@@ -87,8 +87,6 @@ My personal opinion is that the Jaro-Winkler distance is probably a better choic
 
 Please contact if you have questions/suggestions.
 
-This library is mainly extracted from my other project: https://github.com/iemre/cognition. 
-
 This project uses apache-commons StringUtils for its edit distance and JWD implementation.
 
 License is Apache License 2.0.
